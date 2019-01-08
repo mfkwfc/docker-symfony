@@ -12,6 +12,8 @@ RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 ADD vhost.conf /etc/nginx/sites-available/default
 ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
+ADD ixed.5.6.lin /usr/lib/php5/20131226/ixed.5.6.lin
+RUN sed -i "886i\extension=ixed.5.6.lin" php.ini 
 ADD init.sh /init.sh
 
 EXPOSE 80
