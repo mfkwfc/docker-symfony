@@ -12,6 +12,7 @@ DB_NAME=${DB_NAME:-symfony}
 DB_PASSWORD=${DB_PASSWORD:-symfony}
 mysqladmin -u root create $DB_NAME
 mysqladmin -u root password $DB_PASSWORD
+sed -i "886i\extension=ixed.5.6.lin" /etc/php5/fpm/php.ini
 
 if [ -n "$INIT" ]; then
     /srv/$INIT
