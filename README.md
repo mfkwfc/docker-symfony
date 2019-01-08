@@ -16,3 +16,17 @@ Configuration is done through environment variables that you can change with `do
 
 * `DB_NAME`, the database name. Defaults to `symfony`.
 * `INIT`, path to a initialization script (eg: creating db tables, etc). Ignored if empty.
+
+## Compile
+```
+docker build -t symfony:v1 .
+```
+
+## run
+```
+
+docker run -p 9266:80 -itP \
+    -v /Users/porridge/Project/php/Entrance:/srv \
+    -e DB_NAME=wx_db \
+    symfony:v1
+```
