@@ -28,5 +28,6 @@ docker build -t symfony:v1 .
 docker run -p 9266:80 -itP \
     -v /Users/porridge/Project/php/Entrance:/srv \
     -e DB_NAME=wx_db \
+    -e DB_PASSWORD=123123 \
     symfony:v1
 ```

@@ -9,7 +9,6 @@ RUN sed -e 's/;daemonize = yes/daemonize = no/' -i /etc/php5/fpm/php-fpm.conf
 RUN sed -e 's/;listen\.owner/listen.owner/' -i /etc/php5/fpm/pool.d/www.conf
 RUN sed -e 's/;listen\.group/listen.group/' -i /etc/php5/fpm/pool.d/www.conf
 RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
-RUN chown -R mysql /var/lib/mysql
 
 ADD vhost.conf /etc/nginx/sites-available/default
 ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
